@@ -1,0 +1,62 @@
+# Sensitive files
+site:{TARGET} ext:env
+site:{TARGET} ext:log
+site:{TARGET} ext:sql
+site:{TARGET} ext:bak
+site:{TARGET} ext:old
+site:{TARGET} ext:backup
+site:{TARGET} ext:zip
+site:{TARGET} ext:tar
+site:{TARGET} ext:gz
+
+# Config & secrets
+site:{TARGET} "DB_PASSWORD"
+site:{TARGET} "api_key"
+site:{TARGET} "access_token"
+site:{TARGET} "secret_key"
+site:{TARGET} "aws_access_key_id"
+
+# Open directories
+site:{TARGET} intitle:"index of"
+site:{TARGET} "parent directory"
+
+# Admin panels
+site:{TARGET} inurl:admin
+site:{TARGET} intitle:"admin login"
+site:{TARGET} inurl:dashboard
+site:{TARGET} inurl:login
+
+# Debug & errors
+site:{TARGET} "exception"
+site:{TARGET} "stack trace"
+site:{TARGET} "debug mode"
+site:{TARGET} "error on line"
+
+# API & endpoints
+site:{TARGET} inurl:api
+site:{TARGET} "graphql"
+site:{TARGET} inurl:v1
+site:{TARGET} inurl:v2
+
+# Redirect / SSRF params
+site:{TARGET} inurl:redirect
+site:{TARGET} inurl:url=
+site:{TARGET} inurl:return=
+site:{TARGET} inurl:next=
+
+# Documents
+site:{TARGET} ext:pdf
+site:{TARGET} ext:docx
+site:{TARGET} ext:xlsx
+site:{TARGET} ext:csv
+
+# JS files
+site:{TARGET} ext:js
+
+# Subdomain discovery via Google
+site:*.{TARGET} -www
+
+# Dev / staging
+site:{TARGET} inurl:dev
+site:{TARGET} inurl:staging
+site:{TARGET} inurl:test
